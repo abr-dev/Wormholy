@@ -18,7 +18,7 @@ open class Storage: NSObject {
     
     open var requests: [RequestModel] = []
     
-    func saveRequest(request: RequestModel?){
+    public func saveRequest(request: RequestModel?){
         guard request != nil else {
             return
         }

@@ -26,7 +26,7 @@ open class RequestModel: Codable {
     open var errorClientDescription: String?
     open var duration: Double?
     
-    init(request: NSURLRequest, session: URLSession?) {
+    public init(request: NSURLRequest, session: URLSession?) {
         id = UUID().uuidString
         url = request.url?.absoluteString ?? ""
         host = request.url?.host
@@ -84,7 +84,7 @@ open class RequestModel: Codable {
         }
     }
     
-    func initResponse(response: URLResponse) {
+    public func initResponse(response: URLResponse) {
         guard let responseHttp = response as? HTTPURLResponse else {return}
         code = responseHttp.statusCode
         responseHeaders = responseHttp.allHeaderFields as? [String: String]
